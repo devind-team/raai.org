@@ -1,0 +1,11 @@
+mutation DeleteEduProgram($eduProgramId: ID!) {
+  deleteEduProgram(input: { eduProgramId: $eduProgramId }) {
+    success
+    errors {
+      field
+      messages
+    }
+    id
+    __typename
+  }
+}

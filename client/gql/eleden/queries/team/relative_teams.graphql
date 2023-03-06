@@ -1,0 +1,30 @@
+#import '../../fragments/team_groups_user_fields.graphql'
+
+query RelativeTeams($first: Int, $offset: Int, $after: String, $search: String, $courseCount: Float, $courseCountGt: Float) {
+  relativeTeams(
+    first: $first,
+    offset: $offset,
+    after: $after,
+    name_Icontains: $search,
+    shortName_Icontains: $search,
+    admission_Icontains: $search,
+    courseCount: $courseCount,
+    courseCount_Gt: $courseCountGt
+  ) {
+    totalCount
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+      __typename
+    }
+    edges {
+      node {
+        ...TeamGroupsUserFields
+      }
+      __typename
+    }
+    __typename
+  }
+}

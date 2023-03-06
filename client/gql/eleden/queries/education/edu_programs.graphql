@@ -1,0 +1,29 @@
+#import "../../fragments/edu_program_fields.graphql"
+
+query EduPrograms($first: Int, $after: String, $offset: Int, $search: String) {
+  eduPrograms(
+    first: $first,
+    after: $after,
+    offset: $offset,
+    name_Icontains: $search,
+    admission_Icontains: $search,
+    direction_Code_Icontains: $search,
+    direction_Name_Icontains: $search
+  ) {
+    totalCount
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+      __typename
+    }
+    edges {
+      node {
+        ...EduProgramFields
+      }
+      __typename
+    }
+    __typename
+  }
+}

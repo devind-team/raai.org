@@ -1,0 +1,10 @@
+mutation DeleteTeam($teamId: ID!) {
+  deleteTeam(input: { teamId: $teamId }) {
+    success
+    errors {
+      messages
+      field
+    }
+    __typename
+  }
+}

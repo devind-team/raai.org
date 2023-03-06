@@ -1,0 +1,32 @@
+#import "../../fragments/discipline_fields.graphql"
+#import "../../fragments/edu_program_fields.graphql"
+
+query Disciplines($first: Int, $after: String, $offset: Int, $eduProgramId: ID!, $viewId: Float, $search: String) {
+  disciplines(
+    first: $first,
+    after: $after,
+    offset: $offset,
+    eduProgram_Id: $eduProgramId,
+    view_Id: $viewId,
+    code_Icontains: $search,
+    name_Icontains: $search
+  ) {
+    totalCount
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+      __typename
+    }
+     edges {
+       node {
+         ...DisciplineFields
+         eduProgram {
+           ...EduProgramFields
+         }
+       }
+    }
+    __typename
+  }
+}

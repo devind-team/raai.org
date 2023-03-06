@@ -3,7 +3,6 @@ from typing import Protocol, Union
 from django.db import models
 
 from apps.core.models import User
-from apps.messenger.models import Chat
 from devind_core.models import File
 from devind_helpers.resolve_model import ResolveModel
 from .education import EduHours
@@ -74,7 +73,6 @@ class Course(models.Model, ResolveModel):
 
     edu_hours = models.ForeignKey(EduHours, on_delete=models.CASCADE, help_text='Часы по плану')
     team = models.ForeignKey(Team, on_delete=models.CASCADE, help_text='Группа пользователей, которая обучается')
-    chat = models.ForeignKey(Chat, null=True, default=None, on_delete=models.SET_NULL, help_text='Чат курса')
 
     teachers = models.ManyToManyField(User, help_text='Преподаватели курса')
     periods = models.ManyToManyField(Period, through='CoursePeriod', help_text='Периоды обучения')

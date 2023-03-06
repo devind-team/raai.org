@@ -3,7 +3,7 @@
     "model": "core.User",
     "pk": 1,
     "fields": {
-      "password": "pbkdf2_sha256$260000$c1OGOLlssf4JXnKccLVJwC$hWEVPDQim9a+Ane5mbJv9H+KVbFl1aJkfXhYLRZJM8M=",
+      "password": "pbkdf2_sha256$260000$DN27dErhxbH3y2gJwYqvb8$Jc1PNOh5lify8zDsu/X92ogoHhpdoSIYaKSop3IFGxg=",
       "is_superuser": true,
       "username": "admin",
       "email": "admin@gmail.com",

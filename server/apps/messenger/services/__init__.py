@@ -1,1 +1,0 @@
-from .messages_notify import message_notify_service

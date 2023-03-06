@@ -15,7 +15,6 @@ class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('devind_core', '0001_initial'),
-        ('messenger', '0001_initial'),
         ('auth', '0012_alter_user_first_name_max_length'),
     ]
 
@@ -70,7 +69,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True, help_text='Дата создания')),
                 ('updated_at', models.DateTimeField(auto_now=True, help_text='Дата обновления')),
-                ('chat', models.ForeignKey(default=None, help_text='Чат курса', null=True, on_delete=django.db.models.deletion.SET_NULL, to='messenger.chat')),
             ],
             options={
                 'ordering': ('-created_at', 'id'),

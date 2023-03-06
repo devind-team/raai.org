@@ -18,7 +18,6 @@ import user from '~/lang/en/user'
 import error from '~/lang/en/error'
 import support from '~/lang/en/support'
 import notifications from '~/lang/en/notifications'
-import messenger from '~/lang/en/messenger'
 import articles from '~/lang/en/articles'
 
 export default {
@@ -41,7 +40,6 @@ export default {
   user,
   error,
   support,
-  messenger,
   notifications,
   articles
 }

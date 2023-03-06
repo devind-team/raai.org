@@ -31,10 +31,8 @@ export default defineComponent({
     const { user, hasPerm } = authStore
     const items: AvatarMenuItem[] = [
       { name: 'profile', icon: 'face-man', path: 'profile-me' },
-      { name: 'messenger', icon: 'chat-outline', path: 'messenger', permissions: 'core.view_experimental' },
       { name: 'controlPanel', icon: 'cog', path: 'panel', permissions: 'core.view_user' },
       { name: 'infoPanel', icon: 'view-dashboard-outline', path: 'dashboard', permissions: 'core.view_user' },
-      { name: 'eleden', icon: 'decagram-outline', path: 'eleden' },
       { name: 'logout', icon: 'logout', path: 'auth-logout' }
     ]
     return { user, hasPerm, items }

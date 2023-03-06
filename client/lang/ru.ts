@@ -18,9 +18,7 @@ import user from '~/lang/ru/user'
 import support from '~/lang/ru/support'
 import error from '~/lang/ru/error'
 import notifications from '~/lang/ru/notifications'
-import messenger from '~/lang/ru/messenger'
 import articles from '~/lang/ru/articles'
-import sveden from '~/lang/ru/sveden'
 
 export default {
   ...main,
@@ -43,7 +41,5 @@ export default {
   support,
   error,
   notifications,
-  messenger,
   articles,
-  sveden
 }

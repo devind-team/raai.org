@@ -62,8 +62,6 @@ INSTALLED_APPS = [
     'apps.eleden',
     'apps.dashboard',
     'push_notifications',
-    'apps.messenger',
-    'apps.sveden',
     'auditlog'
 ]
 
@@ -125,6 +123,12 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:8000']
 CORS_ORIGIN_REGEX_WHITELIST = ['http://localhost:3000', 'http://localhost:8000']
+
+FIXTURE_DIRS = [
+    join(BASE_DIR, 'apps', 'core'),
+    join(BASE_DIR, 'apps', 'eleden'),
+    join(BASE_DIR, 'apps', 'pages'),
+]
 
 
 # Настройки OAuth2
@@ -242,3 +246,4 @@ SSH_CONNECT = {
 
 DEVIND_CORE_USER_TYPE = 'apps.core.schema.UserType'
 DEVIND_NOTIFICATION_NOTICE_INTERFACE = 'apps.notifications.schema.NoticeInterface'
+

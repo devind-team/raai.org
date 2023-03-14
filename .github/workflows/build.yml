@@ -18,7 +18,7 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
-      - name: Log in to the Cntainer registry
+      - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
           registry: ${{ env.REGISTRY }}
@@ -28,7 +28,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/eleden-server
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/raai-server
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
@@ -45,7 +45,7 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
-      - name: Log in to the Cntainer registry
+      - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
           registry: ${{ env.REGISTRY }}
@@ -55,7 +55,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/eleden-client
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/raai-client
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:

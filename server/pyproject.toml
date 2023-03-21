@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-beautifulsoup4 = "^4.11.1"
+beautifulsoup4 = "^4.12.0"
 celery = "^5.2.7"
 channels = "^3.0.4"
 channels-redis = "^3.3.1"

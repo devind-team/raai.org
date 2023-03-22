@@ -1,7 +1,7 @@
 <template lang="pug">
 v-app
-  navigation(v-model="drawer")
-  app-bar(v-model="drawer")
+  navigation(:value="drawer" @update="drawer = $event")
+  app-bar(:value="drawer" @update="drawer = $event")
   v-main
     nuxt
   footer-component(v-if="footer")

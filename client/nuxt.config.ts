@@ -87,6 +87,9 @@ export default defineNuxtConfig({
       { code: 'en', file: 'en.ts' }
     ]
   },
+  colorMode: {
+    preference: 'light'
+  },
   router: {
     middleware: ['check-auth']
   },

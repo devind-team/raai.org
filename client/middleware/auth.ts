@@ -5,10 +5,9 @@
  */
 
 import Vue, { ComponentOptions } from 'vue'
-import { Middleware, Context } from '@nuxt/types'
 import { useAuthStore } from '~/store/auth-store'
 
-export default <Middleware> function ({ redirect, app: { $apolloHelpers, localePath, i18n }, route, error }: Context) {
+export default function ({ redirect, app: { $apolloHelpers, localePath, i18n }, route, error }) {
   const hasToken: boolean = Boolean($apolloHelpers.getToken())
   if (!hasToken) {
     redirect(localePath({ name: 'auth-login', query: { to: route.fullPath || undefined } }))

@@ -27,7 +27,12 @@ export default defineComponent({
   },
   setup (props, { emit }) {
     const { activeCategories } = usePageStore()
-    const drawer: Ref<boolean> = useVModel(props, 'value', emit)
+
+    const drawer: Ref<boolean> = computed<boolean>({
+      get: () => props.value,
+      set: vl => emit('update', vl)
+    })
+
     const { data: categories } = useQueryRelay<CategoriesQuery, CategoriesQueryVariables, CategoryType>({
       document: categoriesQuery,
       variables: { isNull: true }

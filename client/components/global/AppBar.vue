@@ -29,7 +29,6 @@ v-app-bar(app clipped-left)
 </template>
 
 <script lang="ts">
-import { useVModel } from '@vueuse/core'
 import type { Ref } from '#app'
 import { defineComponent, toRef } from '#app'
 import { useAuthStore, usePageStore } from '~/store'
@@ -50,7 +49,10 @@ export default defineComponent({
     const activeCategories: Readonly<Ref<CategoryType[]>> = toRef(pageStore, 'activeCategories')
 
     const loginIn: Readonly<Ref<boolean>> = toRef(authStore, 'loginIn')
-    const drawer: Ref<boolean> = useVModel(props, 'value', emit)
+    const drawer: Ref<boolean> = computed<boolean>({
+      get: () => props.value,
+      set: vl => emit('update', vl)
+    })
 
     const { data: categories } = useQueryRelay<CategoriesQuery, CategoriesQueryVariables, CategoryType>({
       document: categoriesQuery,

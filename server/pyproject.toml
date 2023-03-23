@@ -48,7 +48,7 @@ devind-notifications = "^0"
 Scrapy = "2.5.1"
 
 [tool.poetry.dev-dependencies]
-flake8 = "^4.0.1"
+flake8 = "^5.0.4"
 flake8-import-order = "^0.18.1"
 flake8-docstrings = "^1.6.0"
 flake8-builtins = "^1.5.3"

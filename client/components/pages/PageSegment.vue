@@ -22,7 +22,6 @@ v-row
 </template>
 
 <script lang="ts">
-
 import { defineComponent, PropType } from '#app'
 import { SegmentAlign, SegmentType, SegmentView } from '~/types/graphql'
 import PageSegmentElement from '~/components/pages/PageSegmentElement.vue'

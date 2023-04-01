@@ -1,8 +1,8 @@
 <template lang="pug">
-raai-index
-  template(v-if="!loading")
-    page-segment(v-for="segment in segments" :key="segment.id" :segment="segment")
-  v-row(v-else)
+raai-index(v-if="!loading")
+  page-segment(v-for="segment in segments" :key="segment.id" :segment="segment")
+v-container(v-else)
+  v-row
     v-progress-circular.mt-12.mx-auto(size="60" color="primary" indeterminate)
 </template>
 

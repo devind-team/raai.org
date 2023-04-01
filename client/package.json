@@ -32,7 +32,6 @@
     "v-viewer": "^1.6.4",
     "vee-validate": "^3.4.14",
     "vue-apexcharts": "^1.6.2",
-    "vue-rx": "^6.2.0",
     "vuetify": "^2.6.14"
   },
   "devDependencies": {
@@ -88,7 +87,6 @@
     "eslint-plugin-nuxt": "^3.2.0",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
-    "rxjs": "^7.8.0",
     "typescript": "^4.9.5",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2"

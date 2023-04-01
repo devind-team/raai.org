@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     baseURL: '/'
   },
   bridge: {
-    nitro: process.env.NODE_ENV === 'development'
+    nitro: true // process.env.NODE_ENV === 'development'
   },
   alias: {
     tslib: 'tslib/tslib.es6.js'
@@ -34,8 +34,8 @@ export default defineNuxtConfig({
     BUILD: process.env.BUILD
   },
   head: {
-    title: 'Home page',
-    titleTemplate: '%s',
+    title: 'Главная страница',
+    titleTemplate: '%s | РААИ',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -69,7 +69,7 @@ export default defineNuxtConfig({
     '@nuxtjs/apollo',
     '@nuxtjs/i18n',
     '@nuxtjs/vuetify',
-    ['@pinia/nuxt', { disableVuex: false }]
+    '@pinia/nuxt'
   ],
   apollo: {
     includeNodeModules: true,

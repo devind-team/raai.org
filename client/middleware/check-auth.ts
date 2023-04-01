@@ -19,10 +19,8 @@ export default <Middleware> async function ({ app: { $apolloHelpers, apolloProvi
     }).then(({ data }) => data.me as UserType)
     if (user) {
       authStore.user = user as UserType
-      await store.dispatch('auth/fetchExistUser', Object.assign({}, user)) // Убрать после удаления vuex
     } else {
       authStore.user = null
-      await store.dispatch('auth/logout') // Убрать после удаления vuex
     }
   }
 }

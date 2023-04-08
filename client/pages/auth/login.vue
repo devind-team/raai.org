@@ -73,7 +73,6 @@ export default defineComponent({
   setup () {
     const router = useRouter()
     const route = useRoute()
-    const { $store } = useNuxtApp()
     const { t, localePath } = useI18n()
     const { onLogin, defaultClient } = useApolloHelpers()
     const authStore = useAuthStore()
@@ -102,10 +101,6 @@ export default defineComponent({
       if (success) {
         onLogin(accessToken, defaultClient, { maxAge: expiresIn, path: '/' }, true)
         authStore.user = user as UserType
-
-        // Убрать после удаления vuex
-        $store.dispatch('auth/fetchExistUser', Object.assign({}, user))
-
         router.push((route.query.to as string) || '/')
       } else {
         loginError.value = errors[0].messages[0]
